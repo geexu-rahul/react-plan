@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Javascript Array</title>
+    </head>
+
+    <body>
+
+        <div id="demo"></div>
+
+        <script>
+            // Array Literal 
+            var x = [10, 20, 50, 80];
+
+            // changing an array element 
+            x[3] = 25;
+
+            // built-in array properties and methods:
+            console.log(x.length)   // Property Returns the number of elements
+            // Method the array
+
+            console.log(x)
+            x.sort() // sort the array 
+            console.log(x)
+            console.log(x[x.length - 1])
+
+            document.write(x[1] + "<br />") //   access an array element by referring to the index number:
+            document.write(x) // access by full array
+            document.write(typeof x) // arrays are object
+
+
+
+            // space and line break not important 
+            var y = [
+                "10",
+                "20",
+                "50",
+                "80"
+            ];
+
+            // you can create an array and then can provide elements 
+            var cities = [] // array created 
+            cities[0] = "Pune";
+            cities[1] = "Mumbai";
+            cities[2] = "Nashik";
+            console.log(cities)
+
+            // using New keyword you can create array 
+            var bikes = new Array("Jupiter", "Activa", "Luna", "R15", "Splendor")
+            console.log(bikes)
+
+
+            document.write("<br /><br />")
+            // Looping an array  For 
+            var fruits = ["banana", "apple", "kivi", "chikku", "orange"]
+            var fruitsLength = fruits.length;
+            for (i = 0; i < fruitsLength; i++) {
+                document.write(fruits[i])
+            }
+
+            // Looping an array.forEach() 
+
+            var vegetables = ["Potato", "Tomato", "Cabage", "Carrat", "Peas", "Radish"]
+
+            var vegetableDisplay = "<ul>";
+            vegetables.forEach(iteratevegies);
+            vegetableDisplay += "</ul>";
+
+            function iteratevegies(value) {
+                vegetableDisplay += "<li>" + value + "</li>";
+            }
+
+            document.write(vegetableDisplay);
+
+            console.log(iteratevegies)
+
+            // adding array element with push or lenght property 
+
+            var numbers = [10, 20, 30]
+            numbers.unshift(55)
+            console.log(numbers)
+            numbers.push(40)  // adding array element through push 
+            console.log(numbers)
+            numbers[numbers.length] = 50; // adding element by property 
+            console.log(numbers)
+
+
+            // Create an array with three elements:
+            //  const points = new Array(40, 100, 1);
+
+            // Create an array with two elements:
+            //  const points = new Array(40, 100);
+
+            // Create an array with one element ???
+            // const points = new Array(40);
+            var numbers1 = 8;
+            console.log(Array.isArray(numbers1))
+
+            console.log(numbers1 instanceof Array)
+
+
+            console.log(numbers)
+            numbers.pop();
+            numbers.shift();
+            console.log(numbers)
+
+            var checkref = ["ram", "sham", "gita"];
+            var copiedcr = checkref;
+            copiedcr.push("kiran");
+
+            copiedcr.push("puja");
+
+            console.log(copiedcr.length)
+            console.log(copiedcr)
+
+            var alphabet = ["a", "b", "c"]
+            console.log(alphabet.length)
+            alphabet.name = "Rahul";
+            console.log(alphabet.length)
+            alphabet.push("Rahul");
+            console.log(alphabet.name)
+
+
+
+
+        </script>
+    </body>
+
+</html>

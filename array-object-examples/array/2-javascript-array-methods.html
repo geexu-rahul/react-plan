@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Javascript Methods </title>
+    </head>
+
+    <body>
+
+        <div id="demo"></div>
+
+        <script>
+            // Concat : join two or more array 
+            data1 = [10, 20, 30];
+            data2 = [40, 50]
+            data3 = [20, 40, 70];
+            output = data1.concat(data2, data3);
+            output1 = data1.concat(data2);
+
+            // entries() return key value pair 
+            for (x of data1.entries()) {
+                document.write(x)
+                document.write("<br />")
+            }
+
+            // every checks if every element in array pass test 
+            var test = data2.every(testit)
+            function testit(x) {
+                return x > 18;
+            }
+            console.log(test)
+
+            // fill 
+            var testfill = [10, 20, 30, 40];
+            console.log(testfill)
+            // testfill.fill(5);
+            // testfill.fill(5, 1, 3);
+            testfill.fill(5, 1);
+            console.log(testfill)
+
+            // filter()
+            var testfilter = [10, 20, 30, 90, 80, 70, 25, 17, 85,];
+            var filteredList = testfilter.filter(checkFilter)
+            function checkFilter(x, p) {
+                return x < 30;
+            }
+            console.log(testfilter)
+            console.log(filteredList)
+
+            // find()
+            var testfind = [10, 20, 30, 90, 80, 70, 25, 17, 85,];
+            var findList = testfind.find(checkFind)
+            // var findList = testfind.findIndex(checkFind)
+            function checkFind(x, p) {
+                return x > 30;
+            }
+            console.log(testfind)
+            console.log(findList)
+
+            // forEach
+            var testforEach = [10, 20, 30, 90, 80, 70, 25, 17, 85,];
+            testforEach.forEach(function (x) {
+                document.write(x + " ")
+            });
+
+            // includes 
+            var testincludes = [10, 20, 30, 90, 80, 70, 20, 25, 17, 85,];
+            console.log(testincludes.includes(20, 3))
+            console.log(testincludes.includes(40))
+
+            // indexOf
+
+            const fruits = ["Banana", "Orange", "Apple", "Mango", "Orange"];
+            let index = fruits.indexOf("Orange", 2);
+            console.log(index)
+
+            // isArray
+            var name = "Rahul";
+            let result = Array.isArray(fruits);
+            let result1 = Array.isArray(name);
+            console.log(result)
+            console.log(result1)
+
+            // join()
+            const fruits1 = ["Banana", "Orange", "Apple", "Mango"];
+            let text = fruits1.join();
+            let text2 = fruits1.join(" And ");
+            console.log(text)
+            console.log(text2)
+
+            // lastIndexOf 
+            const fruits3 = ["Banana", "Orange", "Apple", "Mango", "Orange"];
+            let index1 = fruits3.lastIndexOf("Orange");
+            console.log(index1)
+
+            // map 
+            const testmap = [2, 3, 4, 5, 6, 7, 8];
+            const resultmap = testmap.map(makesquare);
+            function makesquare(x) {
+                return x * 2;
+            }
+            console.log(testmap)
+            console.log(resultmap)
+
+
+            // reverse 
+            // testmap = [2, 3, 4, 5, 6, 7, 8];
+            testmap.reverse()
+            console.log(testmap)
+
+            // slice
+            const testslice = [2, 3, 4, 5, 6, 7, 8];
+            const restultslice = testslice.slice(2, 5)
+            console.log(restultslice)
+
+            // some
+            const testsome = [20, 40, 70];
+            const resultsome = testsome.some(function (x) {
+                return x > 20;
+            })
+            console.log(resultsome)
+
+            // sort()
+            const names = ["rahul", "gita", "pooja", "deepak"]
+            names.sort()
+            console.log(names)
+
+            //  splice 
+
+            const fruits4 = ["Banana", "Orange", "Apple", "Mango"];
+            fruits4.splice(2, 0, "Lemon", "Kiwi");
+            fruits4.splice(2, 1);
+
+            // toString() 
+            text12 = fruits4.toString("");
+            console.log(text12)
+
+            // valueOf()
+            console.log("Value of")
+            copiedtext12 = fruits4.valueOf();
+            console.log(copiedtext12)
+
+
+
+        </script>
+    </body>
+
+</html>
