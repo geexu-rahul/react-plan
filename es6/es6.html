@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Javascript Es 6</title>
+    </head>
+
+    <body>
+
+
+        <script>
+            // fuction scope 
+            function testfuctionscope() {
+                var a = 10;
+                console.log(a)
+            }
+            testfuctionscope() // 10
+            // console.log(a)  Uncaught ReferenceError: a is not defined
+            var b;
+            function testglobalscope() {
+                b = 10;
+                console.log(b)
+            }
+            testglobalscope() // 10
+            console.log(b)    // 10   here b is global scope variable thats why 
+
+
+            // check let scope 
+            {
+                let z;
+                z = 5;
+                console.log(z)
+                {
+                    let x = 10
+                    console.log(x);
+                }
+                // console.log(x);
+            }
+            // console.log(z)  z is not defined
+
+
+            // var redeclare allowed 
+            var m = 10;
+            var m = 20;
+
+            // let redeclare not allowed 
+            let n = 20;
+            // let n = 58;     // Error : n has been already declare 
+            // var n = 22      // Error : n has been already declare
+            console.log(n)
+
+
+            // different scope redeclare var is allowd. 
+            {
+
+                let j = 10;
+                {
+                    // console.log(j)
+                    let j = 85;
+                    console.log(j)
+                }
+                console.log(j)
+            }
+
+            // Template literal / string  use backticks 
+            let emp = "Rajesh"
+            console.log(` Hi ${emp}  `)
+
+            console.log(`${17 < 10 ? 'Too low' : 'Very high'}`)
+
+
+            function tagExample(strings) {
+                return strings;
+            }
+
+            // String Methods
+            console.log("\n")
+            let student = "rahul RawaDe rahul"
+            let student2 = " deepak Rane"
+
+            console.log(student)  // rahul RawaDe rahul
+
+            // uppercase Lower Case 
+            console.log(student.toLocaleLowerCase()) // rahul rawade rahul
+            console.log(student.toUpperCase()) // RAHUL RAWADE RAHUL
+
+            // Concatanation 
+            console.log(student.concat(student2)) // rahul RawaDe rahul deepak Rane
+
+            // indexOf lastIndexOf
+            // indexOf method help to  find first index  the specified character 
+            console.log(student.indexOf("ra")) // 0
+            // lastIndexOf method help to  find last index  the specified character 
+            console.log(student.lastIndexOf("ra")) // 13
+            console.log(student.lastIndexOf("ras")) // if not found then return -1 
+
+            // charAt() method return character 
+            console.log(student.charAt(2)) // h
+
+            // charCodeAt() method return Ascii code  
+            console.log(student.charCodeAt(2)) // 104 
+
+            // replace string at once 
+            console.log(student.replace("rahul", "Kiran")) // Kiran RawaDe rahul
+
+            // splite according to given seperator. and return an array 
+            console.log(student2.split(" "))  // ['', 'deepak', 'Rane']
+
+            // get substring of the string 
+            console.log(student2.substring(3, 10)) // epak Ra
+
+            // help to find pertucular substring 
+            console.log(student2.search("ee")) // find the match starting index  2
+
+            // trim() remove all white spaces before and last of string 
+            // similar trimStart() and trimEnd() remove start and end white space 
+            console.log(student2)           //  deepak Rane ( white space)
+            console.log(student2.trim())    // deepak Rane  ( remove  )
+
+            // startWith  // Check if string starts with specified character(s).
+            const str = "Javascript is amazing"
+            console.log(str.startsWith("Javascript")) // true 
+            console.log(str.startsWith("Java")) // true
+            console.log(str.startsWith("java")) // false 
+
+
+            //  endsWith() // Check if string ends with specified character(s).
+
+            console.log(str.endsWith("amazing")) // true 
+            console.log(str.endsWith("is")) // false
+
+            // includes() Check if string contains specified character(s).
+            console.log(str.includes("is")) // true 
+
+            // repeat() Return new string with specified number of copies of existing string.
+            console.log(str.repeat(5)) // Javascript is amazingJavascript is amazingJavascript is 
+            // amazingJavascript is amazingJavascript is amazing
+
+
+            // Javascript Object Destructring 
+            // Before Es6 
+            const person = {
+                name: 'Rahul',
+                surname: 'Rawade',
+                age: 22
+            }
+
+            var name = person.name;
+            var surname = person.surname;
+            var age = person.age;
+            console.log(`${name} ${surname} ${age} `)
+
+            // After Es6 
+            const person1 = {
+                name: 'Deepak',
+                surname1: 'Shejya',
+                age: 22
+            }
+            var { name, age, surname1: lastname } = person1; // destructring 
+            // descructring object you should use same name variable 
+            console.log(`${name}  ${age} ${lastname} `)
+
+            // If you want to assign different variable names for the object key, you can use:
+
+            // Javascript Array Destructring 
+
+            var weeks = ["sunday", "monday", "Tuesday", "Wendsday"]
+
+            var [week1, week2, week3] = weeks;
+
+            console.log(week1)
+            console.log(week2)
+            console.log(week3)
+
+
+            let arrValue = [10, 20, 30];
+
+            // assigning default value 5 and 7
+            let [x, y = 7, k] = arrValue;
+
+            console.log(k); // 10
+            console.log(y); // 7
+
+            // swapping variables 
+
+            // program to swap variables
+
+            let xx = 4;
+            let yy = 7;
+
+            // swapping variables
+            [xx, yy] = [yy, xx];
+
+            console.log(xx); // 7
+            console.log(yy); // 4
+
+            // Assign default values to variable while using destructring 
+
+            var xarr = [10];
+
+            [out1 = 20, out2 = 40, out3 = 60] = xarr;
+            console.log(`${out1} ${out2} ${out3}`) // 10, 40 ,60
+
+            // skip item 
+            // You can skip unwanted items in an array without assigning them to local 
+            // variables. For example,
+
+            const [pp, , qq] = weeks;
+            console.log(pp) // sunday 
+            console.log(qq) // tuesday 
+
+            // Assign Remaining Elements to a Single Variable
+            let [first, ...all] = weeks;
+            console.log(first) // sunday 
+            console.log(all)   // ['monday', 'Tuesday', 'Wendsday']
+
+            // object Remaining Element to single variable 
+            const person2 = {
+                name2: 'Kajal',
+                surname2: 'Aagarwal',
+                age2: 25
+            }
+            var { name2, ...allPersons } = person2;
+            console.log(name2)  // Kajal 
+            console.log(allPersons)
+
+            // Nested Destructring Assignment 
+            // You can perform nested destructuring for array elements. For example,
+
+            var arrvalues = ["one", ["two", "three"]]
+            let [f, [g, h]] = arrvalues;
+            console.log(f);
+            console.log(g);
+            console.log(h);
+
+            const personq = {
+                name24: 'Jack',
+                age: 26,
+                hobbies: {
+                    read: true,
+                    playGame: true
+                }
+            }
+            // nested destructuring 
+            const { name24, hobbies: { read, playGame } } = personq;
+
+            console.log(name24); // Jack
+            console.log(read); // true
+            console.log(playGame); // true
+
+
+
+            // Arrow Function 
+
+            // function expression 
+            let mj = function (l, n) {
+                return l * n
+            }
+
+            // using arrow function 
+            let mm = (l, n) => l * n;
+            console.log(mm(10, 3))
+
+            // arrow function syntax 
+            let myFunction = (arg1, arg2, ...argN) => {
+                statement(s)
+            }
+            // If the body has single statement or expression, you can write arrow function as:
+            //  let myFunction = (arg1, arg2, ...argN) => expression
+
+            // arrow function with no arguments 
+            let noaruments = () => console.log("No arguments ")
+            noaruments(); // no arguments 
+
+            // arrow fucntion with one arguments 
+            let onearguments = zz => console.log(zz);
+            onearguments(25); //  25 
+
+            // arrow function as an expression 
+
+            let expressionarrow = (18 < 10) ?
+                () => console.log("Low") :
+                () => console.log("high");
+            expressionarrow() // high 
+
+            // multiline arrow function 
+            // If a function body has multiple statements, you need 
+            // to put them inside curly brackets {}. For example,
+            var multilineArrowfun = () => {
+                var ktm = "it is an bike"
+                return ktm;
+            }
+            console.log(multilineArrowfun()) // it is an bike 
+
+
+            /* ------ this ----------- */
+
+            console.log(this) // Windows object 
+
+            function abcd() {
+                console.log(this) // windows object 
+            }
+            abcd();
+
+            let testMethodthis = {
+                name: "Rahul",
+                display() {
+                    console.log(this)
+                    function kkr() {
+                        console.log(this)
+                    }
+                    kkr(); // this ref to Window Object
+                }
+
+
+            }
+            testMethodthis.display(); // this refers to testMethodthis Object 
+
+
+            // this with arrow function 
+
+            // inside regular funciton 
+            console.log(" \n \n")
+
+
+            function employee() {
+                this.name = "Sumit"
+                this.age1 = 32;
+                this.sayName = function () {
+                    console.log(this.age1)
+
+                    function innerFunction() {
+                        console.log(this.age1)
+                        console.log(this)
+                    }
+                    innerFunction();
+                }
+            }
+
+            let emp1 = new employee();
+            emp1.sayName();
+
+
+            function employeearrow() {
+                this.name = "Ronak"
+                this.age1 = 27;
+                this.sayName = function () {
+                    console.log(this.age1)
+
+                    let innerFunction = () => {
+                        console.log(this.age1)
+                        console.log(this)
+                    }
+                    innerFunction();
+                }
+            }
+
+            let emp2 = new employeearrow();
+            emp2.sayName();
+
+
+            var xp = () => {
+
+                console.log(this)
+            }
+            xp();
+
+            // Arguments binding 
+            function argumentsbind() {
+                console.log(arguments)
+            }
+            argumentsbind(10, 20, 30, 40)
+
+            let arrowargumentsbind = (...rest) => {
+                console.log(rest)
+            }
+            arrowargumentsbind(10, 20, 30, 40)
+
+            console.log("this.lastname")
+            let avoidarrow = {
+                name: "Rahul",
+                lastname: "rawade",
+                display: () => {
+                    console.log(this.lastname)
+                    console.log(this) // this will refere to global object 
+                }
+            }
+
+            avoidarrow.display();
+
+
+            // spread
+
+            var testspradearray = [10, 20, 30, 40]
+            var anotherarray = [43, ...testspradearray, 22]
+            console.log(anotherarray) // [43, 10, 20, 30, 40, 22]
+
+            // Rest 
+            // it complete opposite to spred operator 
+            // it combine multiple values to one by seprating comma 
+
+            var summetion = (...args) => {
+                var total = 0;
+                args.map((item) => {
+                    total += item;
+                })
+                console.log(total)
+            }
+
+            summetion(10, 20, 30, 40)
+
+
+            console.log(3 ** 3)
+
+            // Default Parameter 
+            // expression as default value also possible 
+
+            function sum(x = 5, y = 2, z = 5 + 27) {
+                console.log(x + y)
+
+            }
+            sum(); // 7 
+            sum(8) // 10 
+            sum(10, 20) // 30 
+
+            // pass function value as default value 
+            let passfun = () => 24;
+
+            function sum1(x = 22, y = x, z = x + 7, k = passfun()) {
+                console.log(z) // 29
+                console.log(y); // 22
+                console.log(k)
+            }
+            sum1();
+
+
+
+
+        </script>
+
+    </body>
+
+</html>

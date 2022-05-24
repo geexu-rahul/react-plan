@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mosh Examples </title>
+    </head>
+
+    <body>
+
+        <script>
+
+            const person = {
+                name: "Rahul",
+                walk() {
+                    console.log(this)
+                    console.log(this.name + " Walk method called \n \n ")
+                }
+            }
+
+            person.walk(); // object called method 
+
+            let walk = person.walk;
+            walk();  // function outside of objet always ref to global window object 
+
+
+            // How to sole this proble walk() should refer it's person object 
+            // bind a function to an object 
+            let walk1 = person.walk.bind(person);
+            walk1();
+
+
+            // Another issue 
+
+            var emp = {
+                talk() {
+                    var self = this // set variable outside call back function 
+                    setTimeout(function () {
+                        console.log(self) // call variable inside fuction  
+                    }, 2000)
+                }
+
+            }
+
+            emp.talk(); //  this refer to emp object 
+
+        </script>
+
+    </body>
+
+</html>

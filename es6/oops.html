@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Oops </title>
+    </head>
+
+    <body>
+        <script>
+
+            class Student {  // Class 
+                constructor(name, age, div) { // this called whenever objects get create 
+                    // Define Properties inside constructor only 
+                    console.log("Constructor called")
+                    this.name = name;
+                    this.age = age;
+                    this.div = div;
+                }
+                biodata() {
+                    // Method it is called as instace method 
+                    // if it is static method then it will not get inherit 
+                    // for static method just add static keywork ahead of method 
+                    console.log("this is biodata method of student class")
+                    console.log(` ${this.name} ${this.age}  ${this.div}`)
+                }
+            }
+
+
+
+            let student1 = new Student("Rutuja", 25, "B");
+            // obj1 object created with Student class
+
+            // whenever you create object that time constructor() method call it self 
+
+            student1.biodata();  // access method with object 
+
+            // access properties with object 
+
+            // student 2 object same as student but with different values 
+            let student2 = new Student("Nilam", 27, "A");
+            student2.biodata();
+
+            class Players extends Student { // extend inherit Student Properties inside Players 
+                // extend parent properties will be child property 
+                constructor(name, age, div, game) { // parent constructor params and child parms  
+                    // if child inherit parent then it is must to use super  
+                    super(name, age, div); // parent constructor parms 
+                    /* it tell i have created my own constructor allow me to access 
+                     parent properties and then add  parent constructor parms in super and 
+                     child constructor as above     */
+                    this.game = "Kabaddi"
+                }
+                /* biodata() {
+
+                    console.log("this is biodata method of student class")
+                    console.log(` ${this.name} ${this.age}  ${this.div} ${this.game}`)
+                } */
+
+                play_bio() {
+                    console.log("\n")
+                    super.biodata();  // parent method called by writing this 
+                    console.log(this.game)
+
+                }
+            }
+            studen3p = new Players("Harish", 32, "K", "Kabbadi")
+            studen3p.play_bio(); // it will display Harish info that inherited from parent 
+
+
+        </script>
+
+    </body>
+
+</html>
