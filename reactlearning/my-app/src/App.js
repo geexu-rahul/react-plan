@@ -12,10 +12,14 @@ function App() {
     { sno: 4, title: "Assignment Four" },
   ]
 
+  const onDelete = () => {
+    console.log("I am on delete ")
+  }
+
   return (
     <>
       <Header title="My Todos List " />
-      <Todos todos={todos} />
+      <Todos todos={todos} onDelete={onDelete} />
       <Footer />
     </>
   );

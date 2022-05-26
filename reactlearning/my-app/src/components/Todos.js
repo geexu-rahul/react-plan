@@ -9,7 +9,7 @@ export default function Todos(props) {
                 <h3> Todos List </h3>
                 {
                     props.todos.map((item) => {
-                        return (<TodoItem key={item.sno} no={item.sno} title={item.title} />)
+                        return (<TodoItem onDelete={props.onDelete} key={item.sno} no={item.sno} title={item.title} />)
                     })
                 }
 
