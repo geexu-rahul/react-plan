@@ -39,6 +39,7 @@ function App() {
   return (
     <>
       <Header title="My Todos List " />
+      
       <Todos todos={todos} onDelete={onDelete} />
       <Footer />
     </>
