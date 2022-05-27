@@ -5,7 +5,7 @@ export default function Todos(props) {
 
     return (
         <>
-            <div className='container my-5'>
+            <div className='container '>
                 <h3> Todos List </h3>
               
                 { 
