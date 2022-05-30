@@ -1,0 +1,29 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "users": [
+    {
+      "name": "Kiran Mandekar",
+      "email": "kamlesh@gmail.com",
+      "address": "525 dattawadi",
+      "id": 3
+    },
+    {
+      "name": "Shamal Bharam",
+      "email": "Shamal@gmail.com",
+      "address": "Asde",
+      "id": 4
+    },
+    {
+      "name": "Meena Bharam",
+      "email": "meena@gmail.com",
+      "address": "Asde",
+      "id": 5
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Local Storage / Session Storage </title>
+    </head>
+
+    <body>
+
+        <script>
+            // localStorage.setItem('Name', "Rahul");
+            // localStorage.setItem('Name2', "Rohan");
+
+            // let name = localStorage.getItem("Name")
+            // console.log(name)
+
+            // // localStorage.clear();
+            // localStorage.removeItem("Name")
+            // // let name = localStorage.getItem("Namsde2");
+            // // console.log(name)
+
+
+            // localStorage.setItem('Fruits', fruits);
+            var fruits = ["banana", "Mango", "apple"]
+            localStorage.setItem('Fruits', JSON.stringify(fruits));
+            // by this you can make string as ['banana', 'Mango', 'apple'] with brackets
+            // you can store like this to object as well 
+
+            let getFruits = JSON.parse(localStorage.getItem("Fruits"));
+            // parse conver string to array 
+            // output : is an array (3) ['banana', 'Mango', 'apple']
+
+            console.log(getFruits)
+
+
+
+
+
+
+        </script>
+
+    </body>
+
+</html>
